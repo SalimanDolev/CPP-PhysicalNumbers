@@ -6,5 +6,5 @@
 #include <sstream>
 using namespace std;
 namespace ariel{
-      enum class Unit {M,KM,CM,SEC,MIN,HOUR,G,KG,TON};
+      enum class Unit {M=0,KM,CM,SEC,MIN,HOUR,G,KG,TON};
 }

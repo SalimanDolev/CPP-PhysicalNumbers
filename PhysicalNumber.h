@@ -1,8 +1,7 @@
 /**
- * this class represents Units for 3 physical numbers
- * weight : g kg ton
- * speed : sec min hour
- * length : cm m km
+ * This header represents the Physical Number fuction and 
+ * variables, boolean function (==,!=,=<,=>) or regular
+ * operators (++,+,--,-,+=,-=).
  * */
 #pragma once
 #include "Unit.h"
@@ -20,6 +19,7 @@ namespace ariel
            value=num;
             unit=type;
         }
+        bool AreSameDim(Unit type1 , Unit type2);
         //boolean
         bool operator==(const PhysicalNumber& rhs);
         bool operator!=(const PhysicalNumber& rhs);
@@ -39,7 +39,7 @@ namespace ariel
         PhysicalNumber& operator++();
         PhysicalNumber& operator--();
         //stream
-        friend std::istream& operator>>(std::istream& in, const PhysicalNumber& a);
+        friend std::istream& operator>>(std::istream& in, PhysicalNumber& a);
         friend ostream& operator<<(ostream& out, const PhysicalNumber& a);
        
     };
