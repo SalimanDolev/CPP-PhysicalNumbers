@@ -168,8 +168,10 @@ bool PhysicalNumber::operator<(const PhysicalNumber& rhs)
          else return false;
          break;
          }
+         default:
          throw "no sulotion";break;
        }
+
 }
 // checks if the Units are the same and if the value are bigger than the other.
 bool PhysicalNumber::operator>(const PhysicalNumber& rhs)
@@ -317,6 +319,7 @@ bool PhysicalNumber::operator>(const PhysicalNumber& rhs)
          else return false;
          break;
          }
+         default:
          throw "no sulotion";break;
        }
 }
@@ -465,6 +468,7 @@ bool PhysicalNumber::operator<=(const PhysicalNumber& rhs)
          else return false;
          break;
          }
+         default:
          throw "no sulotion";break;
        }
 }
@@ -613,6 +617,7 @@ bool PhysicalNumber::operator>=(const PhysicalNumber& rhs)
          else return false;
          break;
          }
+         default:
          throw "no sulotion";break;
        }
 }
@@ -856,7 +861,7 @@ PhysicalNumber& PhysicalNumber::operator+(const PhysicalNumber& rhs)
          break;
          }
          if ((int)rhs.unit ==2 ){
-         l.value = value + (rhs.value *100000);
+         l.value = value + (rhs.value /100000);
          return l;
          break;
          }
@@ -868,7 +873,7 @@ PhysicalNumber& PhysicalNumber::operator+(const PhysicalNumber& rhs)
          return l;
          break;
          }
-         if ((int)rhs.unit ==2 ){
+         if ((int)rhs.unit ==1 ){
          l.value = value + (rhs.value *100000);
          return l;
          break;
@@ -951,15 +956,16 @@ PhysicalNumber& PhysicalNumber::operator+(const PhysicalNumber& rhs)
          return l;
          break;
          }
+         default:
          throw "no sulotion";break;
        }
-       return l;
+      // return l;
     }
     
 // checks if the Units are the same and minus the both.
 PhysicalNumber& PhysicalNumber::operator-(const PhysicalNumber& rhs)
 {
-      PhysicalNumber l(value,unit);
+    static PhysicalNumber l(value,unit);
     if ( unit==rhs.unit){
             l.value = value - rhs.value;
             return l;
@@ -1001,8 +1007,8 @@ PhysicalNumber& PhysicalNumber::operator-(const PhysicalNumber& rhs)
          return l;
          break;
          }
-         if ((int)rhs.unit ==2 ){
-         l.value = value - (rhs.value *100000);
+         if ((int)rhs.unit ==1 ){
+         l.value = value - (rhs.value /100000);
          return l;
          break;
          }
@@ -1084,9 +1090,10 @@ PhysicalNumber& PhysicalNumber::operator-(const PhysicalNumber& rhs)
          return l;
          break;
          }
+         default:
          throw "no sulotion";break;
        }
-       return l;
+       //return l;
 }
 // Makes the number negatvie.
 PhysicalNumber& PhysicalNumber::operator-()
