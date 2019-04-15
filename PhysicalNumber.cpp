@@ -1446,7 +1446,7 @@ std::istream& ariel::operator>>(std::istream& in, PhysicalNumber& a)
                      std::istreambuf_iterator<char>() };
     std::string delimiter = "[";
     std::string token = content.substr(0, content.find(delimiter));
-    std::string token2 = content.substr(content.find(delimiter), content.size());
+    std::string token2 = content.substr(content.find(delimiter)+1, content.size());
     std::string Name_choice [] = {"[m]","[km]","[cm]","[sec]","[min]","[hour]","[g]","[kg]","[ton]"};
     int num;
     if (token2.compare(Name_choice[0])==0)
