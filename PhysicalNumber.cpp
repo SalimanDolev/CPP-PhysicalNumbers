@@ -163,7 +163,7 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
 {
 
     if ( unit==rhs.unit){
-            if(value == rhs.value)
+            if(value != rhs.value)
             return true;
     }
     else return false;
