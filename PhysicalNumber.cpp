@@ -1018,8 +1018,9 @@ PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber& rhs)
          value = value + (rhs.value / 1000);
          break;
          }
+         throw "no sulotion"; break;
          default:
-         break;
+         throw "no sulotion"; break;
        }
      return *this;
 }
@@ -1131,6 +1132,8 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value / 1000);
          break;
          }
+         throw "no sulotion"; break;
+         default:
          throw "no sulotion"; break;
        }
      return *this;
