@@ -166,7 +166,6 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
             if(value != rhs.value)
             return true;
     }
-    else return false;
     int b=(int)unit;
     string unitName="";
     switch (b)
