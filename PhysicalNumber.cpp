@@ -1271,7 +1271,7 @@ PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& rhs)
 // checks if the Units are the same and minus the both.
 PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& rhs)
 {
-    static PhysicalNumber l(value,unit);
+    PhysicalNumber l(value,unit);
     if ( unit==rhs.unit){
             l.value = value - rhs.value;
             return l;
