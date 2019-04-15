@@ -1424,10 +1424,9 @@ PhysicalNumber& PhysicalNumber::operator++()
     cout << value;
     return *this;
 }
-PhysicalNumber& PhysicalNumber::operator++(int){
+PhysicalNumber PhysicalNumber::operator++(int){
     PhysicalNumber tmp(value,unit);
     value = value +1;
-
     return tmp;
 }
 // Minus 1 to the value of the Object.
@@ -1436,7 +1435,7 @@ PhysicalNumber& PhysicalNumber::operator--()
     value = value -1;
     return *this;
 }
-PhysicalNumber& PhysicalNumber::operator--(int){
+PhysicalNumber PhysicalNumber::operator--(int){
     PhysicalNumber tmp(value,unit);
     value = value -1;
     return tmp;
@@ -1448,7 +1447,6 @@ std::istream& ariel::operator>>(std::istream& in, PhysicalNumber& a)
                      std::istreambuf_iterator<char>() };
     std::string delimiter = "[";
     std::string token = content.substr(0, content.find(delimiter));
-    a.value = std::stod(token);
     std::string token2 = content.substr(content.find(delimiter), content.size());
     std::string Name_choice [] = {"[m]","[km]","[cm]","[sec]","[min]","[hour]","[g]","[kg]","[ton]"};
     int num;
@@ -1472,16 +1470,16 @@ std::istream& ariel::operator>>(std::istream& in, PhysicalNumber& a)
     num=8;
      switch (num)
       { 
-         case 0: a.unit = Unit::M; break;
-         case 1: a.unit = Unit::KM;break;
-         case 2: a.unit = Unit::CM;break;
-         case 3: a.unit = Unit::SEC;break;
-         case 4: a.unit = Unit::MIN;break;
-         case 5: a.unit = Unit::HOUR;break;
-         case 6: a.unit = Unit::G;break;
-         case 7: a.unit = Unit::KG;break;
-         case 8: a.unit = Unit::TON;break;
-         default : throw "input wrong";
+         case 0: a.unit = Unit::M; a.value = std::stod(token); break;
+         case 1: a.unit = Unit::KM; a.value = std::stod(token);break;
+         case 2: a.unit = Unit::CM; a.value = std::stod(token);break;
+         case 3: a.unit = Unit::SEC; a.value = std::stod(token);break;
+         case 4: a.unit = Unit::MIN; a.value = std::stod(token);break;
+         case 5: a.unit = Unit::HOUR; a.value = std::stod(token);break;
+         case 6: a.unit = Unit::G; a.value = std::stod(token);break;
+         case 7: a.unit = Unit::KG; a.value = std::stod(token);break;
+         case 8: a.unit = Unit::TON; a.value = std::stod(token);break;
+         default : throw "input wrong"; break;
        }
     return in;
 }
