@@ -829,7 +829,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
      return *this;
 }
 // checks if the Units are the same and add them both.
-PhysicalNumber& PhysicalNumber::operator+(const PhysicalNumber& rhs)
+PhysicalNumber PhysicalNumber::operator+(const PhysicalNumber& rhs)
 {
     PhysicalNumber l(value,unit);
     if ( unit==rhs.unit){
@@ -959,11 +959,10 @@ PhysicalNumber& PhysicalNumber::operator+(const PhysicalNumber& rhs)
          default:
          throw "no sulotion";break;
        }
-      // return l;
     }
     
 // checks if the Units are the same and minus the both.
-PhysicalNumber& PhysicalNumber::operator-(const PhysicalNumber& rhs)
+PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& rhs)
 {
     static PhysicalNumber l(value,unit);
     if ( unit==rhs.unit){

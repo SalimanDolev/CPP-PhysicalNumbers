@@ -30,8 +30,8 @@ namespace ariel
         //+=,-=,+,-
         PhysicalNumber &operator+=(const PhysicalNumber& rhs);
         PhysicalNumber &operator-=(const PhysicalNumber& rhs);
-        PhysicalNumber &operator+(const PhysicalNumber& rhs);
-        PhysicalNumber &operator-(const PhysicalNumber& rhs);
+        PhysicalNumber operator+(const PhysicalNumber& rhs);
+        PhysicalNumber operator-(const PhysicalNumber& rhs);
         //onary 
         PhysicalNumber& operator-();
         PhysicalNumber& operator+();
