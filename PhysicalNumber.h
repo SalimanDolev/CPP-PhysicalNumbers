@@ -38,6 +38,8 @@ namespace ariel
         //++,--
         PhysicalNumber& operator++();
         PhysicalNumber& operator--();
+        PhysicalNumber& operator++(int);
+        PhysicalNumber& operator--(int);
         //stream
         friend std::istream& operator>>(std::istream& in, PhysicalNumber& a);
         friend ostream& operator<<(ostream& out, const PhysicalNumber& a);

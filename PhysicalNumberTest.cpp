@@ -50,6 +50,8 @@ int main() {
     .CHECK_OK(istringstream("700[kg]") >> a)
     .CHECK_OUTPUT((a += PhysicalNumber(1, Unit::TON)), "1700[kg]")
     // YOUR TESTS - INSERT AS MANY AS YOU WANT
+    .CHECK_OUTPUT(a++, "1701[kg]")
+    .CHECK_OUTPUT(a--, "1700[kg]")
 
       .setname("...")
 
