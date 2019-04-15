@@ -173,13 +173,13 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
         //M
          case 0: 
          if ((int)rhs.unit ==1 ){
-         if(value != (rhs.value *1000))
+         if(value != (rhs.value *100))
          return true;
          else return false;
          break;
          }
          if ((int)rhs.unit ==2 ){
-         if(value != (rhs.value /100))
+         if(value != (rhs.value /1000))
          return true;
          else return false;
          break;
@@ -190,7 +190,7 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
          if ((int)rhs.unit ==0 ){ 
          if(value != (rhs.value /1000))
          return true;
-         else return false;;
+         else return false;
          break;
          }
          if ((int)rhs.unit ==2 ){
