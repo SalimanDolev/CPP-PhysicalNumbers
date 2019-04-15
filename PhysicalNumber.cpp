@@ -1465,6 +1465,7 @@ std::istream& ariel::operator>>(std::istream& in, PhysicalNumber& a)
     num=7;
     if (token2.compare(Name_choice[8])==0)
     num=8;
+    cout << " here is the problem";
      switch (num)
       { 
          case 0: a.unit = Unit::M; a.value = std::stod(token); break;
