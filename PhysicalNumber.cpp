@@ -1108,11 +1108,13 @@ PhysicalNumber& PhysicalNumber::operator+()
 // Add 1 to the value of the Object.
 PhysicalNumber& PhysicalNumber::operator++()
 {
+    value = value +1;
     return *this;
 }
 // Minus 1 to the value of the Object.
 PhysicalNumber& PhysicalNumber::operator--()
 {
+    value = value -1;
     return *this;
 }
 
