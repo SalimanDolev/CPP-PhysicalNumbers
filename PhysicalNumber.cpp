@@ -1477,7 +1477,7 @@ std::istream& ariel::operator>>(std::istream& in, PhysicalNumber& a)
          case 6: a.unit = Unit::G; a.value = std::stod(token);break;
          case 7: a.unit = Unit::KG; a.value = std::stod(token);break;
          case 8: a.unit = Unit::TON; a.value = std::stod(token);break;
-         default : throw "input wrong"; break;
+         //default : throw "input wrong"; break;
        }
     return in;
 }
