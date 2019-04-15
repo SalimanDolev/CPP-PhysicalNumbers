@@ -726,7 +726,7 @@ PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber& rhs)
      return *this;
 }
 // checks if the Units are the same and minus the second to the first.
-PhysicalNumber& PhysicalNumber::operator-=(PhysicalNumber& rhs)
+PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
 {
      if ( unit == rhs.unit){
             value = value - rhs.value;

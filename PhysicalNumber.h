@@ -29,7 +29,7 @@ namespace ariel
         bool operator>=(const PhysicalNumber& rhs);
         //+=,-=,+,-
         PhysicalNumber &operator+=(const PhysicalNumber& rhs);
-        PhysicalNumber &operator-=(PhysicalNumber& rhs);
+        PhysicalNumber &operator-=(const PhysicalNumber& rhs);
         PhysicalNumber &operator+(const PhysicalNumber& rhs);
         PhysicalNumber &operator-(const PhysicalNumber& rhs);
         //onary 
