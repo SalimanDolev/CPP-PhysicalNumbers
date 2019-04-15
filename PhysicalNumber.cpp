@@ -308,7 +308,6 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
          default:
          throw "no sulotion";break;
        }
- 
 }
 // checks if the Units are the same and if the value are smaller than the other.
 bool PhysicalNumber::operator<(const PhysicalNumber& rhs)
@@ -1413,7 +1412,8 @@ PhysicalNumber& PhysicalNumber::operator-()
 // ,makes the number positive.
 PhysicalNumber& PhysicalNumber::operator+()
 {
-    value = +value;
+    if (value<0)
+    value = -value;
     return *this;
 }
 // Add 1 to the value of the Object.
