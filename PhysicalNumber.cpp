@@ -10,17 +10,305 @@ using namespace std;
 // cheks if the Units are the same and if the value are the same.
 bool PhysicalNumber::operator==(const PhysicalNumber& rhs)
 {
-    if ( ceil((double)unit/3) == ceil((double)rhs.unit/3) )
-    return true;
-    else return false;
-    
+     if ( unit==rhs.unit){
+            if(value == rhs.value)
+            return true;
+            else return false;
+    }
+    int b=(int)unit;
+    string unitName="";
+    switch (b)
+      { 
+        //M
+         case 0: 
+         if ((int)rhs.unit ==1 ){
+         if(value == (rhs.value *1000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==2 ){
+         if(value == (rhs.value /100))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //KM
+         case 1:
+         if ((int)rhs.unit ==0 ){ 
+         if(value == (rhs.value /1000))
+         return true;
+         else return false;;
+         break;
+         }
+         if ((int)rhs.unit ==2 ){
+         if(value == (rhs.value /100000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //CM
+         case 2: 
+         if ((int)rhs.unit ==0 ){ 
+         if (value == (rhs.value *100))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==1 ){
+         if(value == (rhs.value *100000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Sec
+         case 3:
+         if ((int)rhs.unit == 4 ){ 
+         if(value == (rhs.value *60))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit == 5 ){
+         if(value == (rhs.value *3600))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Min
+         case 4:
+         if ((int)rhs.unit ==3 ){ 
+         if(value == (rhs.value /60))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==5 ){
+         if(value == (rhs.value *60))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Hour
+         case 5:
+         if ((int)rhs.unit ==3 ){ 
+         if(value == (rhs.value /3600))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==4 ){
+         if(value == (rhs.value /60))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Gram
+         case 6: 
+         if ((int)rhs.unit ==7 ){ 
+         if(value == (rhs.value *1000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==8 ){
+         if(value == (rhs.value *1000000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Kg
+         case 7: 
+         if ((int)rhs.unit ==6 ){ 
+         if(value == (rhs.value /1000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==8 ){
+         if(value == (rhs.value *1000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Ton
+         case 8: 
+         if ((int)rhs.unit ==6 ){ 
+         if(value == (rhs.value /1000000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==7 ){
+         if(value == (rhs.value /1000))
+         return true;
+         else return false;
+         break;
+         }
+         default:
+         throw "no sulotion";break;
+       }
+ 
 }
 // checks if the Units are the same and if the value are not the same.
 bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
 {
-     if ( ceil((double)unit/3) != ceil((double)rhs.unit/3) )
-    return false;
-    else return true;
+
+    if ( unit==rhs.unit){
+            if(value == rhs.value)
+            return true;
+    }
+    else return false;
+    int b=(int)unit;
+    string unitName="";
+    switch (b)
+      { 
+        //M
+         case 0: 
+         if ((int)rhs.unit ==1 ){
+         if(value != (rhs.value *1000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==2 ){
+         if(value != (rhs.value /100))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //KM
+         case 1:
+         if ((int)rhs.unit ==0 ){ 
+         if(value != (rhs.value /1000))
+         return true;
+         else return false;;
+         break;
+         }
+         if ((int)rhs.unit ==2 ){
+         if(value != (rhs.value /100000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //CM
+         case 2: 
+         if ((int)rhs.unit ==0 ){ 
+         if (value != (rhs.value *100))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==1 ){
+         if(value != (rhs.value *100000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Sec
+         case 3:
+         if ((int)rhs.unit == 4 ){ 
+         if(value != (rhs.value *60))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit == 5 ){
+         if(value != (rhs.value *3600))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Min
+         case 4:
+         if ((int)rhs.unit ==3 ){ 
+         if(value != (rhs.value /60))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==5 ){
+         if(value != (rhs.value *60))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Hour
+         case 5:
+         if ((int)rhs.unit ==3 ){ 
+         if(value != (rhs.value /3600))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==4 ){
+         if(value != (rhs.value /60))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Gram
+         case 6: 
+         if ((int)rhs.unit ==7 ){ 
+         if(value != (rhs.value *1000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==8 ){
+         if(value != (rhs.value *1000000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Kg
+         case 7: 
+         if ((int)rhs.unit ==6 ){ 
+         if(value != (rhs.value /1000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==8 ){
+         if(value != (rhs.value *1000))
+         return true;
+         else return false;
+         break;
+         }
+         throw "no sulotion";break;
+         //Ton
+         case 8: 
+         if ((int)rhs.unit ==6 ){ 
+         if(value != (rhs.value /1000000))
+         return true;
+         else return false;
+         break;
+         }
+         if ((int)rhs.unit ==7 ){
+         if(value != (rhs.value /1000))
+         return true;
+         else return false;
+         break;
+         }
+         default:
+         throw "no sulotion";break;
+       }
+ 
 }
 // checks if the Units are the same and if the value are smaller than the other.
 bool PhysicalNumber::operator<(const PhysicalNumber& rhs)
@@ -58,7 +346,7 @@ bool PhysicalNumber::operator<(const PhysicalNumber& rhs)
          break;
          }
          if ((int)rhs.unit ==2 ){
-         if(value < (rhs.value *100000))
+         if(value < (rhs.value /100000))
          return true;
          else return false;
          break;
@@ -72,7 +360,7 @@ bool PhysicalNumber::operator<(const PhysicalNumber& rhs)
          else return false;
          break;
          }
-         if ((int)rhs.unit ==2 ){
+         if ((int)rhs.unit ==1 ){
          if(value < (rhs.value *100000))
          return true;
          else return false;
@@ -209,7 +497,7 @@ bool PhysicalNumber::operator>(const PhysicalNumber& rhs)
          break;
          }
          if ((int)rhs.unit ==2 ){
-         if(value > (rhs.value *100000))
+         if(value > (rhs.value /100000))
          return true;
          else return false;
          break;
@@ -223,7 +511,7 @@ bool PhysicalNumber::operator>(const PhysicalNumber& rhs)
          else return false;
          break;
          }
-         if ((int)rhs.unit ==2 ){
+         if ((int)rhs.unit ==1 ){
          if(value > (rhs.value *100000))
          return true;
          else return false;
@@ -358,7 +646,7 @@ bool PhysicalNumber::operator<=(const PhysicalNumber& rhs)
          break;
          }
          if ((int)rhs.unit ==2 ){
-         if(value <= (rhs.value *100000))
+         if(value <= (rhs.value /100000))
          return true;
          else return false;
          break;
@@ -372,7 +660,7 @@ bool PhysicalNumber::operator<=(const PhysicalNumber& rhs)
          else return false;
          break;
          }
-         if ((int)rhs.unit ==2 ){
+         if ((int)rhs.unit ==1 ){
          if(value <= (rhs.value *100000))
          return true;
          else return false;
@@ -507,7 +795,7 @@ bool PhysicalNumber::operator>=(const PhysicalNumber& rhs)
          break;
          }
          if ((int)rhs.unit ==2 ){
-         if(value >= (rhs.value *100000))
+         if(value >= (rhs.value /100000))
          return true;
          else return false;
          break;
@@ -521,7 +809,7 @@ bool PhysicalNumber::operator>=(const PhysicalNumber& rhs)
          else return false;
          break;
          }
-         if ((int)rhs.unit ==2 ){
+         if ((int)rhs.unit ==1 ){
          if(value >= (rhs.value *100000))
          return true;
          else return false;
@@ -994,7 +1282,7 @@ PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& rhs)
          break;
          }
          if ((int)rhs.unit ==2 ){
-         l.value = value - (rhs.value *100000);
+         l.value = value - (rhs.value /100000);
          return l;
          break;
          }
@@ -1097,11 +1385,13 @@ PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& rhs)
 // Makes the number negatvie.
 PhysicalNumber& PhysicalNumber::operator-()
 {
+    value = -value;
     return *this;
 }
 // ,makes the number positive.
 PhysicalNumber& PhysicalNumber::operator+()
 {
+    value = -value;
     return *this;
 }
 // Add 1 to the value of the Object.

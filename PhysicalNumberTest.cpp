@@ -45,13 +45,19 @@ int main() {
     .CHECK_THROWS(a+d)
     .CHECK_THROWS(b+c)
     .CHECK_THROWS(b+d)
-
+    .CHECK_THROWS(b>d)
     .setname("Basic input")
     .CHECK_OK(istringstream("700[kg]") >> a)
     .CHECK_OUTPUT((a += PhysicalNumber(1, Unit::TON)), "1700[kg]")
     // YOUR TESTS - INSERT AS MANY AS YOU WANT
     .CHECK_OUTPUT(a++, "1701[kg]")
     .CHECK_OUTPUT(a--, "1700[kg]")
+    .CHECK_OUTPUT(-a, "-1700[kg]")
+    .CHECK_OUTPUT(-a, "1700[kg]")
+    .CHECK_THROWS(a==c)
+
+    .setname("Incompatible dimensions")
+
 
       .setname("...")
 
