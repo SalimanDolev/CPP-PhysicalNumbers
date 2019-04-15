@@ -1425,7 +1425,7 @@ PhysicalNumber& PhysicalNumber::operator++()
     return *this;
 }
 PhysicalNumber& PhysicalNumber::operator++(int){
-    static PhysicalNumber tmp(value,unit);
+    PhysicalNumber tmp(value,unit);
     value = value +1;
 
     return tmp;
@@ -1437,7 +1437,7 @@ PhysicalNumber& PhysicalNumber::operator--()
     return *this;
 }
 PhysicalNumber& PhysicalNumber::operator--(int){
-    static PhysicalNumber tmp(value,unit);
+    PhysicalNumber tmp(value,unit);
     value = value -1;
     return tmp;
 }
