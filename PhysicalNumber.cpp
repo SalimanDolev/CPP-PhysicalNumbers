@@ -912,7 +912,8 @@ bool PhysicalNumber::operator>=(const PhysicalNumber& rhs)
 PhysicalNumber& PhysicalNumber::operator+=(const PhysicalNumber& rhs)
 {
      if ( unit == rhs.unit){
-            value = value + rhs.value;            
+            value = value + rhs.value;
+            return *this;            
     }
     int b=(int)unit;
     string unitName="";
@@ -1026,6 +1027,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
 {
      if ( unit == rhs.unit){
             value = value - rhs.value;
+            return *this;
     }
     int b=(int)unit;
     string unitName="";
