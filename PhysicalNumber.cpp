@@ -1043,6 +1043,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value /100);
          break;
          }
+         throw "no sulotion"; break;
         //KM
          case 1:
          if ((int)rhs.unit ==0 ){  
@@ -1053,6 +1054,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value /100000);
          break;
          }
+         throw "no sulotion"; break;
          //CM
          case 2:
          if ((int)rhs.unit ==0 ){ 
@@ -1063,6 +1065,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value *100000);
          break;
          }
+         throw "no sulotion"; break;
          //Sec
          case 3:
          if ((int)rhs.unit ==4 ){ 
@@ -1073,6 +1076,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value *3600);
          break;
          }
+         throw "no sulotion"; break;
          //Min 
          case 4: 
          if ((int)rhs.unit ==3 ){ 
@@ -1083,6 +1087,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value *60);
          break;
          }
+         throw "no sulotion"; break;
          //hour
          case 5: 
          if ((int)rhs.unit ==3 ){ 
@@ -1093,6 +1098,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value /60);
          break;
          }
+         throw "no sulotion"; break;
          //Gram
          case 6: 
          if ((int)rhs.unit ==7 ){ 
@@ -1103,6 +1109,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value *1000000);
          break;
          }
+         throw "no sulotion"; break;
          //Kg
          case 7: 
          if ((int)rhs.unit ==6 ){ 
@@ -1113,6 +1120,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value *1000);
          break;
          }
+         throw "no sulotion"; break;
          //Ton
          case 8: 
          if ((int)rhs.unit ==6 ){ 
@@ -1123,6 +1131,7 @@ PhysicalNumber& PhysicalNumber::operator-=(const PhysicalNumber& rhs)
          value = value - (rhs.value / 1000);
          break;
          }
+         throw "no sulotion"; break;
        }
      return *this;
 }
@@ -1401,7 +1410,7 @@ PhysicalNumber& PhysicalNumber::operator-()
 // ,makes the number positive.
 PhysicalNumber& PhysicalNumber::operator+()
 {
-    value = -value;
+    value = +value;
     return *this;
 }
 // Add 1 to the value of the Object.
