@@ -1425,8 +1425,10 @@ PhysicalNumber& PhysicalNumber::operator++()
     return *this;
 }
 PhysicalNumber& PhysicalNumber::operator++(int){
+    static PhysicalNumber tmp(value,unit);
     value = value +1;
-    return *this;
+
+    return tmp;
 }
 // Minus 1 to the value of the Object.
 PhysicalNumber& PhysicalNumber::operator--()
@@ -1435,8 +1437,9 @@ PhysicalNumber& PhysicalNumber::operator--()
     return *this;
 }
 PhysicalNumber& PhysicalNumber::operator--(int){
+    static PhysicalNumber tmp(value,unit);
     value = value -1;
-    return *this;
+    return tmp;
 }
 
 std::istream& ariel::operator>>(std::istream& in, PhysicalNumber& a)
