@@ -303,6 +303,7 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
          return true;
          else return false;
          break;
+         throw "no sulotion";break;
          }
          default:
          throw "no sulotion";break;
@@ -1313,7 +1314,7 @@ PhysicalNumber PhysicalNumber::operator-(const PhysicalNumber& rhs)
          break;
          }
          if ((int)rhs.unit ==1 ){
-         l.value = value - (rhs.value /100000);
+         l.value = value - (rhs.value *100000);
          return l;
          break;
          }
