@@ -165,6 +165,7 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
     if ( unit==rhs.unit){
             if(value != rhs.value)
             return true;
+            else return false;
     }
     int b=(int)unit;
     string unitName="";
@@ -173,13 +174,13 @@ bool PhysicalNumber::operator!=(const PhysicalNumber& rhs)
         //M
          case 0: 
          if ((int)rhs.unit ==1 ){
-         if(value != (rhs.value *100))
+         if(value != (rhs.value *1000))
          return true;
          else return false;
          break;
          }
          if ((int)rhs.unit ==2 ){
-         if(value != (rhs.value /1000))
+         if(value != (rhs.value /100))
          return true;
          else return false;
          break;
